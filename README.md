@@ -13,16 +13,16 @@ Pasos
 
 1. Clona el repo y entra al directorio:
 
-```bash
+
 git clone https://github.com/GermanMZtec/Actividad_4_NoSql.git
 cd Actividad_4
-```
+
 
 2. Instala dependencias:
 
-```bash
+
 npm install
-```
+
 
 3. Configura variables de entorno (archivo `.env` en la raíz) > variables necesarias:
 
@@ -40,26 +40,26 @@ Si la contraseña contiene símbolos, usa `encodeURIComponent` para codificarla 
 
 4. Ejecuta la app localmente:
 
-```bash
+
 npm start
-```
+
 
 5. Sembrar datos (seed)
 
 El script `seed.js` inserta datos de ejemplo (borra colecciones antes). Ejecuta:
 
-```bash
+
 npm run seed
-```
+
 
 Deploy en Render
 
 - Crea un Web Service en Render usando el repo. En Environment, agrega `MONGO_URI` (exacta) y cualquier otra variable. No subas `.env` al repo.
 - Tras guardar, Render desplegará automáticamente. Para poblar datos en producción usa un One‑off Job con:
 
-```bash
+
 npm run seed
-```
+
 
 Stack usado y por qué
 - Node.js (ESM) — popular y sencillo para microservicios educativos.
@@ -68,9 +68,6 @@ Stack usado y por qué
 - MongoDB (driver oficial) — requisito del proyecto: usar el driver oficial y practicar modelado NoSQL sin Mongoose.
 - dotenv — cargar variables locales en desarrollo.
 
-Captura de pantalla
-
-La app está desplegada en: https://actividad-4-nosql.onrender.com
 
 
 
