@@ -1,0 +1,35 @@
+<%- include('partials/header', { title }) %>
+
+<section class="hero rounded-4 p-5 mb-4">
+  <div class="row align-items-center">
+    <div class="col-lg-8">
+      <h1 class="display-5 fw-bold mb-3">MovieStream</h1>
+      <p class="lead mb-4">CRUD académico simple con Node.js, Express, MongoDB Driver oficial y EJS.</p>
+      <div class="d-flex gap-2 flex-wrap">
+        <a class="btn btn-light btn-lg" href="/movies">Ir a películas</a>
+        <a class="btn btn-outline-light btn-lg" href="/users">Ir a usuarios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="h4">Películas</h2>
+        <p class="text-muted mb-0">Lista, crea, edita y elimina películas con géneros mostrados por nombre.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="h4">Usuarios</h2>
+        <p class="text-muted mb-0">CRUD completo con datos demográficos y encuesta en documentos embebidos.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

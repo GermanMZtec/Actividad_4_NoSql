@@ -1,0 +1,12 @@
+<%- include('../partials/header', { title }) %>
+
+<div class="mb-3">
+  <h1 class="h3 mb-1">Editar película</h1>
+  <p class="text-muted mb-0">Se actualiza el documento usando updateOne().</p>
+</div>
+
+<form action="/movies/edit/<%= movie._id %>" method="post">
+  <%- include('./_form', { movie, genres, buttonLabel: 'Guardar cambios' }) %>
+</form>
+
+<%- include('../partials/footer') %>

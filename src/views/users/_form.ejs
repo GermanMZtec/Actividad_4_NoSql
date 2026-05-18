@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Nombre</label>
+        <input class="form-control" type="text" name="firstName" value="<%= user?.firstName || '' %>" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Apellido</label>
+        <input class="form-control" type="text" name="lastName" value="<%= user?.lastName || '' %>" required />
+      </div>
+      <div class="col-12">
+        <label class="form-label">Email</label>
+        <input class="form-control" type="email" name="email" value="<%= user?.email || '' %>" required />
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Edad</label>
+        <input class="form-control" type="number" min="0" name="age" value="<%= user?.demographics?.age ?? '' %>" />
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Educación</label>
+        <input class="form-control" type="text" name="education" value="<%= user?.demographics?.education || '' %>" />
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Nivel de ingreso</label>
+        <select class="form-select" name="incomeLevel">
+          <option value="" <%= !user?.demographics?.incomeLevel ? 'selected' : '' %>>Seleccione</option>
+          <option value="Low" <%= user?.demographics?.incomeLevel === 'Low' ? 'selected' : '' %>>Low</option>
+          <option value="Medium" <%= user?.demographics?.incomeLevel === 'Medium' ? 'selected' : '' %>>Medium</option>
+          <option value="High" <%= user?.demographics?.incomeLevel === 'High' ? 'selected' : '' %>>High</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Rating</label>
+        <input class="form-control" type="number" min="0" max="5" name="rating" value="<%= user?.survey?.rating ?? '' %>" />
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">¿Recomienda?</label>
+        <select class="form-select" name="wouldRecommend">
+          <option value="false" <%= user?.survey?.wouldRecommend === false ? 'selected' : '' %>>No</option>
+          <option value="true" <%= user?.survey?.wouldRecommend === true ? 'selected' : '' %>>Sí</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <button class="btn btn-primary" type="submit"><%= buttonLabel %></button>
+      <a class="btn btn-link" href="/users">Cancelar</a>
+    </div>
+  </div>
+</div>

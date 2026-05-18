@@ -1,0 +1,12 @@
+<%- include('../partials/header', { title }) %>
+
+<div class="mb-3">
+  <h1 class="h3 mb-1">Nuevo usuario</h1>
+  <p class="text-muted mb-0">Documento sencillo con campos embebidos.</p>
+</div>
+
+<form action="/users" method="post">
+  <%- include('./_form', { user, buttonLabel: 'Crear usuario' }) %>
+</form>
+
+<%- include('../partials/footer') %>

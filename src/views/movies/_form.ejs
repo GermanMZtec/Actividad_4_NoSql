@@ -1,0 +1,51 @@
+<% const selectedGenres = movie?.genreIds || []; %>
+<% const actors = movie?.actors || []; %>
+
+<div class="card">
+  <div class="card-body">
+    <div class="mb-3">
+      <label class="form-label">Título</label>
+      <input class="form-control" type="text" name="title" value="<%= movie?.title || '' %>" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label d-block">Géneros</label>
+      <div class="row g-2">
+        <% genres.forEach((genre) => { %>
+          <div class="col-6 col-md-4">
+            <label class="border rounded-3 p-2 w-100 d-flex align-items-center gap-2">
+              <input class="form-check-input m-0" type="checkbox" name="genres" value="<%= genre._id %>" <%= selectedGenres.includes(genre._id.toString()) ? 'checked' : '' %> />
+              <span><%= genre.name %></span>
+            </label>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-3">
+      <div class="col-md-6">
+        <label class="form-label">Actor 1</label>
+        <input class="form-control mb-2" type="text" name="actorName1" placeholder="Nombre" value="<%= actors[0]?.name || '' %>" />
+        <input class="form-control" type="text" name="actorCharacter1" placeholder="Personaje" value="<%= actors[0]?.character || '' %>" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Actor 2</label>
+        <input class="form-control mb-2" type="text" name="actorName2" placeholder="Nombre" value="<%= actors[1]?.name || '' %>" />
+        <input class="form-control" type="text" name="actorCharacter2" placeholder="Personaje" value="<%= actors[1]?.character || '' %>" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Actor 3</label>
+        <input class="form-control mb-2" type="text" name="actorName3" placeholder="Nombre" value="<%= actors[2]?.name || '' %>" />
+        <input class="form-control" type="text" name="actorCharacter3" placeholder="Personaje" value="<%= actors[2]?.character || '' %>" />
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Precio de lista</label>
+      <input class="form-control" type="number" step="0.01" min="0" name="listPrice" value="<%= movie?.listPrice || '' %>" required />
+    </div>
+
+    <button class="btn btn-primary" type="submit"><%= buttonLabel %></button>
+    <a class="btn btn-link" href="/movies">Cancelar</a>
+  </div>
+</div>
